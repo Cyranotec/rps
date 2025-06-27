@@ -1,8 +1,6 @@
-
-
-// create two variables of type int and 0 initial value for counting user and computer wins
-let userWins = 0
-let computerWins = 0;
+    let userWins = 0;
+    let computerWins = 0;
+    let ties=0;
 
 // generate randomly a value (rock,paper, scissors) as the computerChoice
 function computerChoice() {
@@ -20,7 +18,8 @@ function computerChoice() {
 
 // ask user to input its choice and return it
 function userChoice() {
-    return (prompt("escribe rock,paper or scissors"));
+    return (prompt("escribe rock,paper or scissors").toLowerCase());
+
 }
 // take both, computer and user choice and compare them to set a winner and increase its wining counter
 function playRound(user, computer) {
@@ -50,17 +49,29 @@ function playRound(user, computer) {
                 break;
             case 'scissors': winner = 'tie';
                 break;
-        }break;
+        }
 
     }
 
     switch (winner) {
         case 'user': userWins += 1; break;
-        case 'computer': computerWins += 1;
+        case 'computer': computerWins += 1;break;
+        case 'tie':ties+=1;
     }
 
-    return (`User:${user} vs Computer:${computer}. The winner is ${winner} Score: User ${userWins} Computer ${computerWins}`);
+    return (`${user} vs ${computer}. ${winner}+1 User ${userWins} : Computer ${computerWins} : Ties ${ties}`);
 
 
 }
-console.log(playRound(userChoice(), computerChoice()));
+function playGame(times) {
+    // create two variables of type int and 0 initial value for counting user and computer wins
+
+    for (let index = 0; index < times; index++) {
+        console.log(playRound(userChoice(), computerChoice()));
+    }
+    console.log(`User:${userWins} vs Computer:${computerWins}. The winner is:${(userWins>computerWins) ? 'User':'Computer'}`)
+}
+
+
+
+playGame(3);
