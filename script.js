@@ -1,6 +1,6 @@
-    let userWins = 0;
-    let computerWins = 0;
-    let ties=0;
+let userWins = 0;
+let computerWins = 0;
+let ties = 0;
 
 // generate randomly a value (rock,paper, scissors) as the computerChoice
 function computerChoice() {
@@ -43,20 +43,20 @@ function playRound(user, computer) {
                 break;
         }break;
         case 'scissors': switch (computer) {
-            case 'rock': winner = 'computer'; b
-                reak;
+            case 'rock': winner = 'computer';
+                break;
             case 'paper': winner = 'user';
                 break;
             case 'scissors': winner = 'tie';
-                break;
+
         }
 
     }
 
     switch (winner) {
         case 'user': userWins += 1; break;
-        case 'computer': computerWins += 1;break;
-        case 'tie':ties+=1;
+        case 'computer': computerWins += 1; break;
+        case 'tie': ties += 1;
     }
 
     return (`${user} vs ${computer}. ${winner}+1 User ${userWins} : Computer ${computerWins} : Ties ${ties}`);
@@ -69,7 +69,7 @@ function playGame(times) {
     for (let index = 0; index < times; index++) {
         console.log(playRound(userChoice(), computerChoice()));
     }
-    console.log(`User:${userWins} vs Computer:${computerWins}. The winner is:${(userWins>computerWins) ? 'User':'Computer'}`)
+    console.log(`User:${userWins} vs Computer:${computerWins}. The winner is:${(userWins > computerWins) ? 'User' : 'Computer'}`)
 }
 
 
