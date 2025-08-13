@@ -49,18 +49,20 @@ function handleSelection(e) {
         partidas += 1;
         //Actualiza DOM
         lastChoice.textContent = `User: ${userChoice} vs Machine: ${computerChoice}`;
+        userElement.textContent = user;
+        tiesElement.textContent = ties;
+        computerElement.textContent = computer;
 
-        if ((user + computer) == 5) {
-            lastChoice.textContent = `Game over`;
-            alert(`Human: ${user} vs Computer: ${computer}. El ganador es ${user > computer ? 'User' : 'Computer'}`);
+        if ((partidas) == 5) {
+            winner = (user == computer) ? 'Tie' : (user > computer ? 'User' : 'Computer');
+            const mensaje = `GAME OVER Human: ${user} vs Computer: ${computer}. El ganador es ${winner}`;
+            lastChoice.textContent = mensaje;
+            // alert(mensaje);
             partidas = 0;
             user = 0;
             computer = 0;
             ties = 0;
         }
-        userElement.textContent = user;
-        tiesElement.textContent = ties;
-        computerElement.textContent = computer;
     }
 }
 
