@@ -1,0 +1,32 @@
+* {
+    border: .5px blue dotted;
+}
+
+body {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+#container {
+    min-width: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+#players {
+    display: flex;
+    justify-content: space-around;  
+}
+
+#score {
+    display: flex;
+    flex-direction: column;
+}
+#score>div{
+    display: flex;
+    justify-content: space-around;
+}

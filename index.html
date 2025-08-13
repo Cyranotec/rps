@@ -1,13 +1,57 @@
 <!DOCTYPE html>
 <html lang="es-mx">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Sicsorss console game</title>
-    
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <script src="script.js"></script>
-    
+    <div id="container">
+        <h1>Play RPS vs Machine</h1>
+
+        <div>
+            <h2>Players</h2>
+            <div id="players">
+                <div id="choice">
+                    <p>Human</p>
+                    <div><button id="rock">🗿 Rock</button>
+                        <button id="paper">📄 Paper</button>
+                        <button id="scissors">✂️ Scissors</button>
+                    </div>
+                </div>
+                <div>
+                    <p>Machine</p>
+                    <div><button>❓</button></div>
+                </div>
+            </div>
+            <h3>Last choice</h3>
+            <p id='lastChoice'>
+
+            </p>
+        </div>
+
+        <div id="score">
+            <h2>Score</h2>
+            <div>
+                <div>
+                    <h3>Human</h3>
+                    <p id="user">0</p>
+                </div>
+                <div>
+                    <h3>Ties</h3>
+                    <p id="ties">0</p>
+                </div>
+                <div>
+                    <h3>Machine</h3>
+                    <p id="computer">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
